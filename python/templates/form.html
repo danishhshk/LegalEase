@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .main-cont {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .left-cont {
+            width: 60%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-cont {
+            width: 35%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-info {
+            margin-top: 20px;
+        }
+
+        .input-step {
+            display: none;
+        }
+
+        .input-step:first-child {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #ddd;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .progress-bar div {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif; /* Change the font-family to your preferred font */
+        }
+
+        div {
+            font-size: 16px; /* Change the font size */
+            /* margin: 20px; Add margin for better spacing */
+            /* white-space: pre-wrap; Preserve white space and wrap lines */
+        }
+    </style>
+    <!-- ... (your existing HTML code) ... -->
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      updateFormVisibility();
+      document.getElementById('nextBtn').addEventListener('click', nextStep);
+      document.getElementById('prevBtn').addEventListener('click', prevStep);
+      updateButtonVisibility(); // Call the function to set initial button visibility
+  });
+
+  let currentStep = 0;
+
+  function nextStep() {
+      if (validateCurrentStep()) {
+          currentStep++;
+          updateFormVisibility();
+          updateProgressBar();
+          updateButtonVisibility();
+      }
+  }
+
+  function prevStep() {
+      currentStep--;
+      updateFormVisibility();
+      updateProgressBar();
+      updateButtonVisibility();
+  }
+
+  function validateCurrentStep() {
+      const currentStepFields = document.querySelectorAll(`#step${currentStep + 1} [required]`);
+      for (const field of currentStepFields) {
+          if (!field.value.trim()) {
+              alert('Please fill in all the required fields before proceeding.');
+              return false;
+          }
+      }
+      return true;
+  }
+
+  function updateFormVisibility() {
+      const formSteps = document.querySelectorAll('.input-step');
+      formSteps.forEach((step, index) => {
+          step.style.display = index === currentStep ? 'block' : 'none';
+      });
+  }
+
+  function updateProgressBar() {
+      const totalSteps = document.querySelectorAll('.input-step').length;
+      const percentage = (currentStep / (totalSteps - 1)) * 100;
+      const progress = document.querySelector('.progress-bar div');
+      progress.style.width = `${percentage}%`;
+  }
+
+  function updateButtonVisibility() {
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
+
+      if (currentStep === 0) {
+          prevBtn.style.display = 'none';
+      } else {
+          prevBtn.style.display = 'inline-block';
+      }
+
+      const formSteps = document.querySelectorAll('.input-step');
+      if (currentStep === formSteps.length - 1) {
+          nextBtn.style.display = 'none';
+      } else {
+          nextBtn.style.display = 'inline-block';
+      }
+
+      // Disable next button if the current step is not validated
+      nextBtn.disabled = !validateCurrentStep();
+  }
+  function redirectToUserSel() {
+        window.location.href = '/user_sel';
+    }
+</script>
+
+<!-- ... (your existing HTML code) ... -->
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="./images/mainlogo.png" alt="Logo" />
+            </a>
+        </div>
+        <div class="right">
+            <button>Sign In</button>
+            <button>Sign Up</button>
+            <button>Guest</button>
+        </div>
+    </header>
+    <main>
+      <div class="main-cont">
+          <div class="left-cont">
+              <h2>Please Enter All the Necessary Details</h2>
+              <div class="user-info">
+                  <form action="/generate" method="post" id="partnershipForm">
+                      <div class="inputs">
+                          {% for i in range(1, 5) %}
+                          <div class="input-step" id="step{{ i }}" {% if i != 1 %}style="display: none;"{% endif %}>
+                              <h2>Partner Information - Step {{ i }}</h2>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_name">Partner {{ i }} Full Name:</label>
+                                    <input type="text" id="partner_{{ i }}_name" name="partner_{{ i }}_name" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_gender">Gender (Son/Daughter) of Father's Name:</label>
+                                    <input type="text" id="partner_{{ i }}_gender" name="partner_{{ i }}_gender" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_address_1">Address Line 1:</label>
+                                    <input type="text" id="partner_{{ i }}_address_1" name="partner_{{ i }}_address_1" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_address_2">Address Line 2:</label>
+                                    <input type="text" id="partner_{{ i }}_address_2" name="partner_{{ i }}_address_2" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_city">City:</label>
+                                    <input type="text" id="partner_{{ i }}_city" name="partner_{{ i }}_city" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_state">State:</label>
+                                    <input type="text" id="partner_{{ i }}_state" name="partner_{{ i }}_state" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partner_{{ i }}_pin">Pin Code:</label>
+                                    <input type="text" id="partner_{{ i }}_pin" name="partner_{{ i }}_pin" required>
+                                </div>
+
+                                {% if i != 4 %}
+                                <button type="button" onclick="if (validateCurrentStep()) nextStep()">Next</button>
+
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                            <button type="button" onclick="if (validateCurrentStep()) nextStep()">Next</button>
+                            <div class="input-step" id="step5" style="display: none;">
+                                <h2>Partnership Details</h2>
+                                <!-- Partnership Details Inputs (similar to your previous code) -->
+                                <div class="input-item">
+                                    <label for="partnership_date">Date of Partnership (Date, Month, Year):</label>
+                                    <input type="text" id="partnership_date" name="partnership_date" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="business_activity">Description of Business Activity Proposed:</label>
+                                    <input type="text" id="business_activity" name="business_activity" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="principal_place">Principal Place of Business:</label>
+                                    <input type="text" id="principal_place" name="principal_place" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="partnership_duration">Duration of Partnership:</label>
+                                    <input type="text" id="partnership_duration" name="partnership_duration" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="initial_capital">Initial Capital of the Firm (Total Partners Contribution):</label>
+                                    <input type="text" id="initial_capital" name="initial_capital" required>
+                                </div>
+                                <button type="button" onclick="nextStep()">Next</button>
+                                <button type="button" onclick="prevStep()">Previous</button>
+                            </div>
+
+                            <!-- WITNESS INFORMATION -->
+                            <div class="input-step" id="step6" style="display: none;">
+                                <h2>Witness Information</h2>
+                                <!-- Witness Information Inputs (similar to your previous code) -->
+                                {% for i in range(1, 3) %}
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_name">Witness {{ i }} Full Name:</label>
+                                    <input type="text" id="witness_{{ i }}_name" name="witness_{{ i }}_name" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_address_1">Address Line 1:</label>
+                                    <input type="text" id="witness_{{ i }}_address_1" name="witness_{{ i }}_address_1" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_address_2">Address Line 2:</label>
+                                    <input type="text" id="witness_{{ i }}_address_2" name="witness_{{ i }}_address_2" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_city">City:</label>
+                                    <input type="text" id="witness_{{ i }}_city" name="witness_{{ i }}_city" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_state">State:</label>
+                                    <input type="text" id="witness_{{ i }}_state" name="witness_{{ i }}_state" required>
+                                </div>
+
+                                <div class="input-item">
+                                    <label for="witness_{{ i }}_pin">Pin Code:</label>
+                                    <input type="text" id="witness_{{ i }}_pin" name="witness_{{ i }}_pin" required>
+                                </div>
+                                {% endfor %}
+                                <button type="submit">Generate Partnership Deed</button>
+                                <button type="button" onclick="prevStep()">Previous</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="prevBtn" style="display: none;">Previous</button>
+                    <!-- <button type="button" id="nextBtn" style="display: inline-block;">Next</button> -->
+                </div>
+                        <div class="input-navigation">
+                            <div class="progress-bar">
+                                <div></div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="right-cont">
+                <div class="explain-doc" style="margin-top: 20px; margin-left: 30px">
+                    Document Explanation
+                </div>
+                <div class="explain-doc" style="margin-top: 20px; margin-left: 30px">
+                    Document Explanation
+                </div>
+
+                <div class="doc-exp">
+                     Display the generated partnership deed content here -->
+                    <!-- <div id="partnershipDeedContent" style="font-size: 16px; margin: 20px; white-space: pre-wrap;"></div>
+                </div>
+
+                <div class="generate-doc">
+                    <button style="background-color: gray">
+                        <a href="{{ url_for('download', filename='your_generated_file.pdf') }}">Generate Simple Explanation</a>
+
+
+                    </button>
+                </div>
+            </div> --> 
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="../templates/index.html">
+            <img src="../static/mainlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="right">
+          <button>Sign In</button>
+          <button>Sign Up</button>
+          <button>Guest</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-cont">
+        <div class="left-cont" style="margin-left: 30px">
+          
+<div class="select-doc">
+  Select the type of Document
+  <div class="dropdown">
+      <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="documentTypeButton" <!-- Add an ID to the button -->
+      >
+          Select the Document type
+      </button>
+      <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" onclick="updateButtonText('Select the Document type')">Select the Document type</a></li>
+          <li><a class="dropdown-item" href="#" onclick="updateButtonText('Partnership Deed')">Partnership Deed</a></li>
+          <li><a class="dropdown-item" href="#" onclick="updateButtonText('Contract')">Contract</a></li>
+      </ul>
+  </div>
+</div>
+          <div class="explaination-cont">
+            <textarea
+              class="explaination"
+              name=""
+              id=""
+              cols="75"
+              rows="10"
+              placeholder="Explain your case"
+            ></textarea>
+          </div>
+        </div>
+        <div
+          class="right-cont"
+          style="display: flex; flex-direction: column; gap: 90px"
+        >
+        <div class="select-state">
+          Select Your State
+          <div class="dropdown">
+              <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="stateButton" <!-- Add an ID to the button -->
+              >
+                  Select Your State
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Select Your State')">Select Your State</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Maharashtra')">Maharashtra</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Karnataka')">Karnataka</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Delhi')">Delhi</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Gujarat')">Gujarat</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('Kerala')">Kerala</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="updateStateButtonText('etc')">etc</a></li>
+              </ul>
+          </div>
+      </div>
+          <div class="create-doc">
+            <!-- <form action="/redirect_to_page3" method="get">
+              <button type="submit">Create the Document</button>
+          </form>
+          </div> -->
+          <button onclick="redirectToPage()">Create the Document</button>
+          
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script>
+      function redirectToPythonPage() {
+        // Assuming the Python page is named main.py
+        window.location.href = './main.py';
+      }
+    </script> -->
+    <script>
+      function redirectToPage() {
+          window.location.href = '/user_sel';
+      }
+      function updateButtonText(text) {
+          document.getElementById('documentTypeButton').innerText = text;
+      }
+      function updateStateButtonText(text) {
+        document.getElementById('stateButton').innerText = text;
+    }
+  </script>
+  </body>
+</html>

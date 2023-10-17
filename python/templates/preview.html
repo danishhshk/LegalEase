@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../static/mainlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="right">
+          <button>Sign In</button>
+          <button>Sign Up</button>
+          <button>Guest</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-cont">
+        <div class="left-cont">
+          <div class="preview">Preview Your Document</div>
+          <div class="generated-pdf"style="width: 50%; height: 100%; overflow: auto;"><pre>{{ content[1] }}</pre></div>
+          <div class="customize-cont">
+            <button>customize</button>
+            <button><a href="{{ url_for('download', filename='partnership_deed.pdf') }}" download="partnership_deed.pdf">Download PDF</a></button>
+          </div>
+        </div>
+        <div class="right-cont">
+          <div class="preview">Random Explanation</div>
+          <div class="generated-pdf" style="width: 50%; height: 100%; overflow: auto;">
+              <p>{{ random_explanation }}</p>
+          </div>
+          <a href="ourLawyer.html">
+              <button style="width: 50%; border-radius: 5px; height: 30px;">
+                  Lawyers
+              </button>
+          </a>
+      </div>
+      </div>
+    </main>
+  </body>
+</html>

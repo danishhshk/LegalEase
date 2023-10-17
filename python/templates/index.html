@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/index.css" />
+    <title>LegalEase</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../static/mainlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="right">
+          <button>Sign In</button>
+          <button>Sign Up</button>
+          <button>Guest</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-cont">
+        <div class="left-cont">
+          <div class="left-title">
+            <h2>Streamline your Document Generation Process</h2>
+          </div>
+          <p style="font-size: larger">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab labore,
+            vero quas asperiores in laboriosam modi! Animi cupiditate natus
+          </p>
+          <div class="get-started">
+            <button class="strt-btn" onclick="redirectToPage()">
+             <p>Get Started</p>
+            </button>
+          </div>
+        </div>
+        <div class="right-cont">
+          <img src="images/right.png" alt="" />
+        </div>
+      </div>
+    </main>
+    <div class="signIn">
+      <form action="">
+        <div class="inputs">
+          <div class="input-item">
+            <label for="">Full Name</label>
+            <input type="text" />
+          </div>
+          <div class="input-item">
+            <label for="">Phone Number</label>
+            <input type="number" />
+          </div>
+          <div class="input-item">
+            <label for="">Age</label>
+            <input type="number" />
+          </div>
+          <div class="input-item">
+            <label for="">email id</label>
+            <input type="email" />
+          </div>
+          <div class="input-item">
+            <label for="">password</label>
+            <input type="password" />
+          </div>
+          <div class="input-item">
+            <label for="">confirm-password</label>
+            <input type="password" />
+          </div>
+        </div>
+        <div class="register">
+          <button>Register</button>
+        </div>
+        <div class="LogIn">
+          <p>already have an Account??</p>
+          <button>Log in</button>
+        </div>
+      </form>
+      <!-- <button>Sign In</button>
+      <button>Sign Up</button> -->
+    </div>
+    <script src="index.js"></script>
+    <script>
+      function redirectToPage() {
+          window.location.href = '/get_started';
+      }
+  </script>
+  </body>
+</html>

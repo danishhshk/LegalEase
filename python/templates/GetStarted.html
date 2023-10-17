@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../static/mainlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="right">
+          <button>Sign In</button>
+          <button>Sign Up</button>
+          <button>Guest</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-cont">
+        <div class="left-cont">
+          <div class="lawyer">
+              <button onclick="redirecttolawyer()">
+                <img src="../static/download (1).png " alt="" />
+                <h3>Lawyer</h3>
+              </button>
+          </div>
+          <div class="user">
+            <button onclick="redirectToPage()" class="user-btn">
+              <img src="../static/images.jpg" alt="" />
+              <h3>User</h3>
+            </button>
+          </div>
+        </div>
+        <div class="right-cont">
+          <h1>what doest our website provides</h1>
+          <ol>
+            <li>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
+              quisquam repudiandae reiciendis officiis unde iure, voluptates quo
+              corrupti nemo dolores.
+            </li>
+            <li>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur
+              illum labore sapiente tempore doloremque laudantium asperiores
+              perspiciatis nostrum. Nihil, rem!
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              beatae, voluptatibus sed officiis praesentium dignissimos
+              accusamus aliquid libero earum eveniet?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              sapiente neque distinctio voluptatum, assumenda minima earum
+              beatae blanditiis dignissimos ducimus?
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+              sapiente neque distinctio voluptatum, assumenda minima earum
+              beatae blanditiis dignissimos ducimus?
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="signIn">
+        <button
+          class="cancel-btn"
+          style="position: relative; top: 0px; left: 90%; width: 25px"
+        >
+          x
+        </button>
+        
+        <!-- <button>Sign In</button>
+        <button>Sign Up</button> -->
+      </div>
+      <script src="../static/index.js"></script>
+    </main>
+    <script>
+      function redirectToPage() {
+          window.location.href = '/User';
+      }
+      function redirecttolawyer() {
+          window.location.href = '/Lawyer';
+      }
+  </script>
+  </body>
+</html>

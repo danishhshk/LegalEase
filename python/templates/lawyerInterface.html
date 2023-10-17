@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <a href="#">
+            <img src="../static/mainlogo.png" alt="Logo"
+          /></a>
+        </div>
+        <div class="right">
+          <button>Sign In</button>
+          <button>Sign Up</button>
+          <button>Guest</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="lawyer-page">
+      <div class="main-cont">
+        <div class="lawyer-left-cont">
+          <div class="create-profile" style="height: 10%">
+              ><button onclick="redirectTopro()"
+                style="
+                  width: 40%;
+                  background-color: white;
+                  height: 100%;
+                  border-radius: 10px;
+                "
+              >
+                Create Profile
+              </button>
+          </div>
+          <div class="client" style="height: 10%">
+              <button
+                onclick="redirectToclient()"
+                style="
+                  width: 40%;
+                  background-color: white;
+                  height: 100%;
+                  border: 2px solid black;
+                  border-radius: 10px;
+                "
+              >
+                Client
+              </button>
+          </div>
+          <div class="status" style="height: 10%">
+              ><button onclick="redirectTostatus()"
+                style="
+                  width: 40%;
+                  background-color: white;
+                  height: 100%;
+                  border-radius: 10px;
+                "
+              >
+                Status
+          </button>
+          </div>
+          <div class="update" style="height: 10%">
+            <!-- <a href="Updates.html" -->
+              ><button onclick="redirectToupdates()"
+                style="
+                  width: 40%;
+                  background-color: white;
+                  height: 100%;
+                  border-radius: 10px;
+                "
+              >
+                Updates
+              </button>
+          </div>
+        </div>
+        <div class="lawyer-right-cont">
+          <div class="create-cont">
+            <h3 class="right-title">Create Profile</h3>
+          </div>
+          <div class="client-cont">
+            <h3 class="right-title">Clients</h3>
+          </div>
+          <div class="status-cont">
+            <h3 class="right-title">Client Status</h3>
+          </div>
+          <div class="update-cont left-btn">
+            <h3 class="right-title">Updates</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="lawyer.js"></script>
+    <script>
+        function redirectTopro() {
+            window.location.href = '/Create_porfile';
+        }
+        function redirectToclient() {
+            window.location.href = '/client';
+        }
+        function redirectTostatus() {
+            window.location.href = '/Status';
+        }
+        function redirectToupdates() {
+            window.location.href = '/Updates';
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Poppins SemiBold;
+  background-color: aliceblue;
+}
+.blur {
+  filter: blur(6px);
+}
+.nav {
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px; */
+}
+
+.nav img {
+  height: 6vh;
+  margin: 20px;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+.nav button {
+  font-size: 1.2vw;
+  border-radius: 50px;
+  /* background-color: black; */
+  padding: 10px;
+}
+.nav button:hover {
+  cursor: pointer;
+}
+
+.main-cont {
+  height: 80vh;
+  width: 100vw;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+}
+.left-cont {
+  width: 50%;
+  height: 80%;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.left-title {
+  padding: 20px;
+  font-size: 35px;
+}
+.right-cont {
+  width: 50%;
+  height: 90%;
+  /* background-color: green; */
+}
+.get-started {
+  height: 10vh;
+}
+
+.strt-btn {
+  border-radius: 5px;
+  width: 70px;
+  height: 6vh;
+  margin-top: 20px;
+}
+.strt-btn:hover {
+  cursor: pointer;
+}
+
+.signIn {
+  width: 40vw;
+  height: 70%;
+  background-color: rgb(179, 179, 179);
+  margin: auto;
+  position: absolute;
+  top: -500px;
+  left: 25%;
+
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px 3px gray;
+  transition: 0.5s;
+}
+.cancel-btn {
+  background-color: red;
+}
+.ShowSignIn {
+  position: absolute;
+  top: 100px;
+}
+
+.signIn button {
+  height: 30px;
+  width: 80px;
+  border-radius: 6px;
+  position: relative;
+  top: 50%;
+  /* left: 30%; */
+  margin: 10px;
+}
+.signIn button:hover {
+  cursor: pointer;
+}
+.input-item {
+  width: 40%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+form .inputs {
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+form input {
+  border-radius: 9px;
+  height: 30px;
+}
+
+form .register {
+  margin-left: 40%;
+  margin-top: 20px;
+}
+form .LogIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lawyer button {
+  width: 200px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 40px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.lawyer img {
+  width: 80px;
+  height: 80px;
+}
+.lawyer button:hover {
+  cursor: pointer;
+}
+
+.user button {
+  width: 200px;
+
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 40px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+.user button:hover {
+  cursor: pointer;
+}
+.user img {
+  width: 80px;
+  height: 80px;
+}
+.right-cont ol li {
+  margin-top: 30px;
+}
+
+.select-doc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 15%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.explaination {
+  /* width: 80%;
+  height: 50%; */
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  margin-left: -50px;
+  border-radius: 10px;
+}
+
+.select-state {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 15%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.create-doc {
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 15%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.create-doc button {
+  height: 30px;
+  width: 80px;
+  border-radius: 6px;
+  background-color: gray;
+  color: white;
+  /* left: 30%; */
+  margin: 10px;
+}
+
+.doc-exp {
+  height: 50%;
+  width: 80%;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 40px;
+  padding: 15px;
+  line-height: 2;
+}
+.generate-doc button {
+  margin-top: 20px;
+}
+
+.explain-doc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 10%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.preview {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 10%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.generated-pdf {
+  height: 50%;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 30px;
+}
+
+.customize-cont {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.customize-cont button {
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 40px;
+  border: 1px solid;
+  border-radius: 15px;
+}
+.customize-cont button:hover {
+  cursor: pointer;
+}
+
+.main-container {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards {
+  height: 30px;
+  width: 180px;
+}
+
+.main-container form {
+  padding: 20px;
+  width: 700px;
+  background-color: azure;
+  box-shadow: 0px 5px 10px gray;
+  border-radius: 15px;
+  min-height: 100vh;
+}
+.main-container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.main-container form .row .col {
+  flex: 1 1 250px;
+}
+
+.main-container form .row .col .title {
+  font-size: 20px;
+  color: #333;
+  padding: 20px;
+  text-transform: uppercase;
+}
+.main-container form .row .col .inputBox {
+  margin: 15px 0px;
+}
+.main-container form .row .col span {
+  margin-bottom: 10px;
+  display: block;
+}
+.main-container form .row .col .inputBox input {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.main-container form .row .col .inputBox input:focus {
+  border: 2px solid black;
+}
+.main-container form .row .col .flex {
+  display: flex;
+  gap: 15px;
+}
+.main-container form .row .col .inputBox img {
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #474747);
+}
+
+.main-container form .submit-btn {
+  width: 100%;
+  pad: 12px;
+  font-size: 17px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main-container form .submit-btn:hover {
+  background-color: azure;
+}
+.lawyer-right-cont {
+  width: 50%;
+}
+.lawyer-right-cont .create-cont {
+  height: 100%;
+  width: 95%;
+  background-color: white;
+  margin-left: 40px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.lawyer-right-cont .right-title {
+  text-align: center;
+}
+.lawyer-right-cont .client-cont {
+  height: 100%;
+  width: 95%;
+  display: none;
+  position: relative;
+  /* top: -100%; */
+  background-color: white;
+  margin-left: 40px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+
+.lawyer-right-cont .status-cont {
+  height: 100%;
+  width: 95%;
+  display: none;
+  position: relative;
+  /* top: -100%; */
+  background-color: white;
+  margin-left: 40px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.lawyer-right-cont .update-cont {
+  height: 100%;
+  width: 95%;
+  display: none;
+  position: relative;
+  /* top: -100%; */
+  background-color: white;
+  margin-left: 40px;
+  border-radius: 15px;
+  border: 1px solid black;
+}
+.lawyer-right-cont .active {
+  display: block;
+}
+.lawyer-right-cont .deactive {
+  display: none;
+}
+
+.lawyer-page .left-cont {
+  gap: 40px;
+  margin-left: -90px;
+  border-right: 1px solid black;
+}
+.progress-bar {
+  width: 0;
+  height: 10px;
+  background-color: green;
+  transition: width 0.3s ease;
+}

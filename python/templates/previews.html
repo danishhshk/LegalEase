@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview</title>
+    <style>
+        /* Add this style to enable word wrap */
+        div.container {
+            width: 50%;
+            margin: auto;
+            float: left;
+            word-wrap: break-word;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <pre>{{ content[1] }}</pre>
+    </div>
+
+    <div class="container">
+        <p>It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="{{ url_for('download', filename='partnership_deed.pdf') }}" download="partnership_deed.pdf">Download PDF</a></p>
+        <button onclick="redirectToPage()">ChatBot Support</button>
+    </div> -->
+<div class="cont">
+    <div class="left">
+        <pre>{{ content[1] }}</pre>
+    </div>
+    <div class="right">
+        <div class="generate-doc">
+            <button style="background-color: gray">
+                <a href="{{ url_for('download', filename='your_generated_file.pdf') }}">Generate Simple Explanation</a>
+
+
+            </button>
+        </div>
+    </div>
+</div>
+    <script>
+        function redirectToPage() {
+            window.location.href = '/chat_bot_support';
+        }
+    </script>
+</body>
+</html>
